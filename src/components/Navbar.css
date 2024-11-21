@@ -1,60 +1,98 @@
+
+
+
 .navbar {
-    position:fixed;
-    top: 0;
-    width: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 150px;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-size: 28px;
+  font-weight: bold;
+  color: red;
+  white-space: nowrap;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.navbar-menu li {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-title {
+  font-size: 16px;
+}
+
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .navbar-menu {
+    gap: 15px;
+    display: none; /* Hide menu by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+  }
+
+  .navbar-menu.open {
     display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    padding: 10px 150px; 
-    box-sizing: border-box;
   }
-  
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .navbar-brand {
-    font-size: 28px;
-    font-weight: bold;
-    color: red;
-    white-space: nowrap; 
-  }
-  
-  .navbar-menu {
-    display: flex;
-    gap: 20px; 
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    align-items: center; 
-  }
-  
+
   .navbar-menu li {
-    position: relative;
-    cursor: pointer;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
   }
-  
+
   .dropdown-title {
-    font-size: 16px; 
+    font-size: 14px;
   }
-  
-  @media (max-width: 768px) {
-    .navbar {
-      padding: 10px 20px; 
-    }
-  
-    .navbar-menu {
-      gap: 15px; 
-    }
-  
-    .dropdown-title {
-      font-size: 14px; 
-    }
+
+  .hamburger-menu {
+    display: flex; 
   }
-  
+}
